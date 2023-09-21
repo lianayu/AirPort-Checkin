@@ -14,7 +14,7 @@ def multi_account():
     account = accounts.split(';')
     for i in range(len(account)):
         st=random.randint(2,30)
-        print("sleep %d",st)
+        print("sleep ",st)
         time.sleep(st)
         u_p = account[i].split("|")
         email = u_p[0]
