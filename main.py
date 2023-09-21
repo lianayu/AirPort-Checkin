@@ -1,6 +1,8 @@
 import requests
 import json
 import os
+import time
+import random
 
 # ql脚本 增加环境变量：AIRPORT_ACCOUNT（多账号格式：账号|密码;账号|密码） AIRPORT_BASE_URL
 # session.get(base_url,headers=headers, verify=False) 不加header 运行不了 
@@ -11,6 +13,9 @@ def multi_account():
     accounts = os.environ["AIRPORT_ACCOUNT"]# 账号|密码;账号|密码
     account = accounts.split(';')
     for i in range(len(account)):
+        st=random.randint(2,30)
+        print("sleep %d",st)
+        time.sleep(st)
         u_p = account[i].split("|")
         email = u_p[0]
         password = u_p[1]
